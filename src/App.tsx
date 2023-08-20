@@ -2,12 +2,18 @@
 import './App.css'
 
 function App() {
+  const ar = [10,20,30,40]
 
   
 
   return (
     <>
-      <h1>Welcome to React</h1>
+    {
+      ar.map((a)=>{
+        return <li>{a}</li>
+      })
+    }
+      
     </>
   )
 }
