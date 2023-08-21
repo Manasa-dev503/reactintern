@@ -1,3 +1,12 @@
+.male{
+  background-color: lightblue;
+}
+.female{
+  background-color: pink;
+}
+
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
