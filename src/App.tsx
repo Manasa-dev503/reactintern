@@ -1,8 +1,11 @@
 
 import './App.css'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-function App() {
-  const ob = [
+function App() { 
+
+  const [table,settable] = React.useState([
     {
       firstname : "manasa",
       lastname : "bathina",
@@ -23,35 +26,37 @@ function App() {
       lastname : "reddy",
       age : 40
     }
-  ]
+  ])
   function abc(){
-    ob.sort((b,c)=>{
+    settable([...table].sort((b,c)=>{
       return (b.firstname<c.firstname)?-1:1
 
-    })
-  
-
-    
+    }))
   }
-
-  
-
+  function bcd(){
+    settable([...table].sort((b,c)=>{
+      return (b.lastname<c.lastname)?-1:1
+    }))
+  }
+  function pqr(){
+    settable([...table].sort((b,c)=>{
+      return (b.age<c.age)?-1:1
+    }))
+  }
   return (
     <>
-    
-    
-      <table border={1}>
+    <table border={1}>
         <thead>
           <th onClick={abc}>Firstname</th>
-          <th>Lastname</th>
-          <th>Age</th>
+          <th onClick={bcd}>Lastname</th>
+          <th onClick={pqr}>Age</th>
         </thead>
         
         <tbody>
           {
           
           
-            ob.map((v)=>{
+            table.map((v)=>{
               return <tr><td>{v.firstname}</td><td>{v.lastname}</td><td>{v.age}</td></tr>
             })
             
