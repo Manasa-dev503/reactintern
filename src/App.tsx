@@ -1,13 +1,12 @@
 
+import React from 'react'
 import './App.css'
+import { Outlet } from "react-router-dom";
 
 function App() {
-
-  
-
-  return (
+  return(
     <>
-      <h1>Welcome to React</h1>
+    <Outlet></Outlet>
     </>
   )
 }
